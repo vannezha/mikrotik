@@ -2,9 +2,9 @@
 require("routeros_api.class.php");
 $API = new routeros_api();
 $API->debug = false;
-$user_mikrotik  = "admin";
-$password_mikrotik  = "";
-$ip_mikrotik    = "192.168.4.1";
+$user_mikrotik  = "smamuhi";
+$password_mikrotik  = "1234";
+$ip_mikrotik    = "10.10.10.1";
  
 if($API->connect($ip_mikrotik, $user_mikrotik, $password_mikrotik)){
 $username 	= $_POST['username'];
@@ -23,13 +23,13 @@ $password2 	= $_POST['password2'];
           ".id"     		=> $username,
           "password"	 	=> $password2,
 			));
-	echo "<script>window.location='http://192.168.14.1/sukses.html'</script>";
+	echo "<script>window.location='http://10.10.10.1/sukses.html'</script>";
 	} 
 	elseif(count($cekuser)==0){
-	echo "<script>window.location='http://192.168.14.1/usernotfound.html'</script>";
+	echo "<script>window.location='http://10.10.10.1/usernotfound.html'</script>";
 	}
 	else{
-    echo "<script>window.location='http://192.168.14.1/gagalpassword.html'</script>";
+    echo "<script>window.location='http://10.10.10.1/gagalpassword.html'</script>";
 		}
 	$API->disconnect();
 	} 
